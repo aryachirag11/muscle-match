@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 // import { exerciseOptions, fetchData } from "../utils/fetchData.util";
-import { exercisesData, bodyPartList } from "../utils/exerciseData";
+import exercisesData from "../utils/exerciseData.json";
+import bodyPartsJson from "../utils/bodyPartList.json";
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
   const [bodyPartsData, setBodyPartsData] = useState([]);
@@ -11,7 +12,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     // const url = "https://exercisedb.p.rapidapi.com/exercises/bodyPartList";
     // const bodyPartsData = await fetchData(url, exerciseOptions);
 
-    setBodyPartsData(["all", ...bodyPartList]);
+    setBodyPartsData(["all", ...bodyPartsJson]);
   };
   const handleSearch = async () => {
     // const url =
@@ -56,9 +57,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
           placeholder="Search Exercises"
           type="text"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSearch();
+          }}
         />
         <Button
-          className="seacrh-btn"
+          className="search-btn"
           sx={{
             bgcolor: "#ff2625",
             color: "#fff",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
-import Icon from "../assets/icons/gym.png";
+// import Icon from "../assets/icons/gym.png";
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => (
   <Stack
@@ -36,8 +36,9 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
     }}
   >
     <img
-      src={`/${item}.png`}
-      alt={`${item} logo image`}
+      src={`/${item}.jpeg`}
+      alt={`${item} logo`}
+      // loading="lazy"
       // width={300}
       // height={300}
       style={{
@@ -48,7 +49,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => (
       }}
     />
     <Typography
-      fontSize="24px"
+      fontSize="22px"
       fontWeight="bold"
       fontFamily="Alegreya"
       color="#3A1212"

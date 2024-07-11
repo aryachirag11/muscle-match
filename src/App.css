@@ -78,6 +78,7 @@ body {
   padding-bottom: 10px;
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
+  gap: 1rem;
 }
 
 .exercise-card img {
@@ -95,8 +96,24 @@ body {
 }
 
 .search-btn:hover {
+  font-weight: 500;
   color: #ff2625 !important;
-  border: 1px solid #ff2625 !important;
+  border: 2px solid #ff2625 !important;
+}
+.tag-btn1:hover {
+  font-weight: 500;
+  color: #ffa9a9 !important;
+  border: 2px solid #ffa9a9 !important;
+}
+.tag-btn2:hover {
+  font-weight: 500;
+  color: #fcc757 !important;
+  border: 2px solid #fcc757 !important;
+}
+.tag-btn3:hover {
+  font-weight: 500;
+  color: #7aacd6 !important;
+  border: 2px solid #7aacd6 !important;
 }
 
 .exercise-video {
