@@ -3,12 +3,23 @@ import { Box } from "@mui/material";
 import Exercises from "../components/Exercises";
 import SearchExercises from "./../components/SearchExercises";
 import HeroBanner from "../components/HeroBanner";
+import BodyPart from "./../components/BodyPart";
 const Home = () => {
+  const [bodyPart, setBodyPart] = useState("");
+  const [exercises, setExercises] = useState([]);
   return (
     <Box>
       <HeroBanner />
-      <SearchExercises />
-      <Exercises />
+      <SearchExercises
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
+      <Exercises
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
     </Box>
   );
 };
