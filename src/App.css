@@ -115,7 +115,13 @@ body {
   color: #7aacd6 !important;
   border: 2px solid #7aacd6 !important;
 }
-
+.card-youtube {
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+.card-youtube:hover {
+  transform: scale(1.1, 1.1);
+}
 .exercise-video {
   display: flex;
   flex-direction: column;
