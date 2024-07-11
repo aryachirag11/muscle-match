@@ -92,6 +92,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         }}
       >
         <HorizontalScrollbar
+          setExercises={setExercises}
           data={bodyPartsData}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}

@@ -1,8 +1,7 @@
 import Pagination from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { exerciseOptions, fetchData } from "./../utils/fetchData.util";
-import { exercisesData } from "../utils/exerciseData";
+import exerciseData from "../utils/exerciseData.json";
 import ExerciseCard from "./ExerciseCard";
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
@@ -18,6 +17,21 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     setCurrentPage(value);
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const getFilterData = () => {
+      let scrollSeactionData = [];
+      if (bodyPart === "all") scrollSeactionData = exerciseData;
+      else
+        scrollSeactionData = exerciseData.filter(
+          (exercise) => exercise.bodyPart.toLowerCase() === bodyPart
+        );
+      setExercises(scrollSeactionData);
+    };
+
+    getFilterData();
+  }, [bodyPart]);
+
   return (
     <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography variant="h3" mb="46px">
